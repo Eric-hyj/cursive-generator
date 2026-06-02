@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Cormorant_Garamond, IBM_Plex_Sans, Sacramento } from "next/font/google";
 import Link from "next/link";
 import { SiteHeader } from "@/components/keyword-page";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import "./globals.css";
 
 const displayFont = Cormorant_Garamond({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={`${displayFont.variable} ${bodyFont.variable} ${scriptFont.variable}`}>
+        <GoogleAnalytics />
         <div className="site-shell">
           <SiteHeader />
           {children}
