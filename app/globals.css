@@ -177,6 +177,45 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--border);
 }
 
+.hero-quick-links {
+  margin-top: 6px;
+}
+
+.hero-quick-label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+
+.hero-quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.hero-quick-link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.hero-quick-link:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* Hero右侧 — 工具区 */
 .hero-tool-panel {
   display: flex;

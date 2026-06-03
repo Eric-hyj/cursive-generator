@@ -63,6 +63,20 @@ export function KeywordPage({ slug }: { slug: string }) {
               <span className="hero-tag">One-click copy</span>
               <span className="hero-tag">Multiple styles</span>
             </div>
+
+            {slug === "home" && (
+              <div className="hero-quick-links">
+                <span className="hero-quick-label">Popular tools</span>
+                <div className="hero-quick-grid">
+                  <Link href="/cursive-text-generator" className="hero-quick-link">Cursive Text</Link>
+                  <Link href="/cursive-font-generator" className="hero-quick-link">Cursive Fonts</Link>
+                  <Link href="/cursive-signature-generator" className="hero-quick-link">Signature Generator</Link>
+                  <Link href="/cursive-name-generator" className="hero-quick-link">Name Generator</Link>
+                  <Link href="/cursive-text-generator-copy-and-paste" className="hero-quick-link">Copy &amp; Paste</Link>
+                  <Link href="/cursive-alphabet-generator" className="hero-quick-link">Alphabet A-Z</Link>
+                </div>
+              </div>
+            )}
           </div>
           <div className="hero-tool-panel">
             <GeneratorPanel initialPrompt={page.samplePrompt} examples={page.examples} pageSlug={slug} />
