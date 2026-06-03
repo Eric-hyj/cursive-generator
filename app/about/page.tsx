@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { getSiteUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "About Inkspell - Free Cursive Text Generator",
-  description: "Learn about Inkspell, our free online cursive generator. We help you create beautiful cursive text for social media, signatures, names, and creative projects.",
+  title: "About Inkspell - Free Cursive Text Generator Tools",
+  description: "Learn about Inkspell, our free online cursive generator tools. Create elegant cursive text for social media, names, signatures, and creative projects.",
   alternates: { canonical: `${getSiteUrl()}/about` }
 };
 
@@ -13,33 +13,43 @@ export default function AboutPage() {
       <div className="page-inner">
         <article className="prose" style={{ maxWidth: "720px" }}>
           <h1>About Inkspell</h1>
+
+          <h2>What We Do</h2>
           <p>
-            Inkspell is a free online cursive text generator built to make stylish, flowing text accessible to
-            everyone. Whether you are styling a social media bio, designing a signature, or just exploring
-            beautiful letterforms, our tool gives you instant cursive text you can copy and paste anywhere.
+            Inkspell is a collection of free online cursive text tools. We convert plain text into elegant,
+            flowing cursive writing that you can copy and paste anywhere — social media bios, profile names,
+            email signatures, creative projects, and more. Our tools work instantly without downloads,
+            sign-ups, or payments.
           </p>
+
+          <h2>Our Tools</h2>
+          <ul>
+            <li><strong>Cursive Text Generator</strong> — Turn any phrase or sentence into cursive.</li>
+            <li><strong>Cursive Font Generator</strong> — Compare multiple cursive styles side by side.</li>
+            <li><strong>Cursive Signature Generator</strong> — Create elegant handwritten signature styles.</li>
+            <li><strong>Cursive Name Generator</strong> — Style names, nicknames, and usernames in cursive.</li>
+            <li><strong>Cursive Alphabet</strong> — Browse every cursive letter A to Z.</li>
+            <li><strong>Copy and Paste Cursive</strong> — Streamlined tool optimized for speed.</li>
+          </ul>
 
           <h2>How It Works</h2>
           <p>
-            Our generator converts plain text into cursive using Unicode math script and script-like characters.
-            These special characters look like cursive handwriting and display natively on iPhones, Android
-            devices, Windows PCs, and Macs — no font downloads or installations needed. You type, we convert,
-            you copy.
+            Our tools convert plain text into Unicode math script characters — special characters that look
+            like cursive handwriting and display natively on iPhones, Android devices, Windows PCs, and Macs.
+            No font files to download, no software to install. Just type your text, pick a style, and copy
+            the result.
           </p>
 
-          <h2>Why We Built This</h2>
+          <h2>Why Free?</h2>
           <p>
-            We noticed that most cursive text tools online were cluttered, slow, or tried to sell you fonts.
-            We wanted something simpler: a clean, fast generator that does one thing well and gets out of
-            your way. Inkspell is the result — a tool-first site where you can generate beautiful cursive
-            text in seconds and get back to creating.
+            We believe simple, useful tools should be free. Inkspell is supported by advertising, which keeps
+            the core text generation tools free for everyone. We do not require accounts, store your text, or
+            charge for usage.
           </p>
 
-          <h2>Our Approach</h2>
+          <h2>Contact</h2>
           <p>
-            We believe good tools should be free, fast, and focused. Inkspell does not require sign-ups,
-            does not store your text, and works entirely in your browser. We support the site through
-            advertising so the core tool remains free for everyone.
+            Questions, feedback, or feature ideas? Reach out through our <a href="/contact">Contact page</a>.
           </p>
         </article>
       </div>

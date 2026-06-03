@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { buildAlphabetRows, generateCursiveStyles } from "@/lib/generator";
+import { trackAlphabetCopy } from "@/lib/gtag";
 
 const styleLabels = [
   { key: "classic" as const, label: "Classic Script" },
@@ -14,10 +15,11 @@ export function AlphabetGrid() {
   const rows = buildAlphabetRows();
   const [copiedLetter, setCopiedLetter] = useState<string | null>(null);
 
-  async function handleCopy(letter: string) {
+  async function handleCopy(letter: string, styleName: string) {
     try {
       await navigator.clipboard.writeText(letter);
       setCopiedLetter(letter);
+      trackAlphabetCopy(styleName);
       setTimeout(() => setCopiedLetter(null), 1200);
     } catch {
       setCopiedLetter(null);
@@ -43,12 +45,13 @@ export function AlphabetGrid() {
                   key={style.key}
                   type="button"
                   className={`alphabet-styled-btn${copiedLetter === row[`${style.key}Upper`] ? " copied" : ""}`}
-                  onClick={() => handleCopy(row[`${style.key}Upper`])}
+                  onClick={() => handleCopy(row[`${style.key}Upper`], style.label)}
                   title={`Copy ${style.label} "${row.upper}"`}
                 >
                   {row[`${style.key}Upper`]}
                 </button>
               ))}
+              <span className="alphabet-example-word">{row.exampleWord}</span>
             </div>
           ))}
         </div>
@@ -69,12 +72,13 @@ export function AlphabetGrid() {
                   key={style.key}
                   type="button"
                   className={`alphabet-styled-btn${copiedLetter === row[`${style.key}Lower`] ? " copied" : ""}`}
-                  onClick={() => handleCopy(row[`${style.key}Lower`])}
+                  onClick={() => handleCopy(row[`${style.key}Lower`], style.label)}
                   title={`Copy ${style.label} "${row.lower}"`}
                 >
                   {row[`${style.key}Lower`]}
                 </button>
               ))}
+              <span className="alphabet-example-word">{row.exampleWord}</span>
             </div>
           ))}
         </div>
@@ -94,7 +98,7 @@ export function AlphabetGrid() {
               <button
                 type="button"
                 className={`result-copy-btn${copiedLetter === word.text ? " copied" : ""}`}
-                onClick={() => handleCopy(word.text)}
+                onClick={() => handleCopy(word.text, word.label)}
               >
                 {copiedLetter === word.text ? "✓ Copied" : "Copy"}
               </button>

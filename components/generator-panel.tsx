@@ -1,28 +1,46 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { generateCursiveStyles } from "@/lib/generator";
+import { trackGeneratorInput, trackGeneratorCopy, trackExampleClick } from "@/lib/gtag";
 
 type GeneratorPanelProps = {
   initialPrompt: string;
   examples: string[];
   showAsResults?: boolean;
+  pageSlug?: string;
 };
 
-export function GeneratorPanel({ initialPrompt, examples, showAsResults }: GeneratorPanelProps) {
+export function GeneratorPanel({ initialPrompt, examples, showAsResults, pageSlug = "" }: GeneratorPanelProps) {
   const [value, setValue] = useState(initialPrompt);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const inputTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const results = useMemo(() => generateCursiveStyles(value), [value]);
 
-  async function handleCopy(id: string, text: string) {
+  function handleInput(text: string) {
+    setValue(text);
+    // Debounce input tracking to avoid flooding GA
+    if (inputTimer.current) clearTimeout(inputTimer.current);
+    inputTimer.current = setTimeout(() => {
+      if (text.trim()) trackGeneratorInput(pageSlug, text.length);
+    }, 800);
+  }
+
+  async function handleCopy(id: string, label: string, text: string) {
     try {
       await navigator.clipboard.writeText(text);
       setCopiedId(id);
+      trackGeneratorCopy(pageSlug, label);
       setTimeout(() => setCopiedId(null), 1500);
     } catch {
       setCopiedId(null);
     }
+  }
+
+  function handleExampleClick(example: string) {
+    setValue(example);
+    trackExampleClick(pageSlug, example);
   }
 
   if (showAsResults) {
@@ -38,7 +56,7 @@ export function GeneratorPanel({ initialPrompt, examples, showAsResults }: Gener
             <button
               type="button"
               className={`result-copy-btn${copiedId === result.id ? " copied" : ""}`}
-              onClick={() => handleCopy(result.id, result.text)}
+              onClick={() => handleCopy(result.id, result.label, result.text)}
             >
               {copiedId === result.id ? "✓ Copied" : "Copy"}
             </button>
@@ -57,7 +75,7 @@ export function GeneratorPanel({ initialPrompt, examples, showAsResults }: Gener
         id="cursive-input"
         className="gen-textarea"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => handleInput(e.target.value)}
         placeholder="Write something elegant..."
         aria-label="Input text to convert to cursive"
       />
@@ -68,7 +86,7 @@ export function GeneratorPanel({ initialPrompt, examples, showAsResults }: Gener
             key={example}
             type="button"
             className="gen-chip"
-            onClick={() => setValue(example)}
+            onClick={() => handleExampleClick(example)}
           >
             {example}
           </button>
@@ -95,7 +113,7 @@ export function GeneratorPanel({ initialPrompt, examples, showAsResults }: Gener
             <button
               type="button"
               className={`result-copy-btn${copiedId === result.id ? " copied" : ""}`}
-              onClick={() => handleCopy(result.id, result.text)}
+              onClick={() => handleCopy(result.id, result.label, result.text)}
             >
               {copiedId === result.id ? "✓ Copied" : "Copy"}
             </button>

@@ -6,6 +6,8 @@ import { GeneratorPanel } from "@/components/generator-panel";
 import { ResultCards } from "@/components/result-cards";
 import { AlphabetGrid } from "@/components/alphabet-grid";
 import { generateCursiveStyles } from "@/lib/generator";
+import { buildFaqSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
+import { RelatedLinkCard } from "@/components/related-link-card";
 
 const categoryLabels: Record<string, string> = {
   font: "Fonts", name: "Names", signature: "Signatures",
@@ -34,6 +36,16 @@ export function KeywordPage({ slug }: { slug: string }) {
       <div className="page-inner">
         <Breadcrumbs items={buildBreadcrumbs(page)} />
 
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbSchema(page)) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page.faqs)) }}
+        />
+
         {/* ═══ V2.0 三合一核心区 ═══ */}
         <section className="hero-tool">
           <div className="hero-tool-copy">
@@ -53,7 +65,7 @@ export function KeywordPage({ slug }: { slug: string }) {
             </div>
           </div>
           <div className="hero-tool-panel">
-            <GeneratorPanel initialPrompt={page.samplePrompt} examples={page.examples} />
+            <GeneratorPanel initialPrompt={page.samplePrompt} examples={page.examples} pageSlug={slug} />
           </div>
         </section>
 
@@ -65,7 +77,7 @@ export function KeywordPage({ slug }: { slug: string }) {
               Click any style to copy
             </span>
           </div>
-          <ResultCards items={generateCursiveStyles(page.samplePrompt)} />
+          <ResultCards items={generateCursiveStyles(page.samplePrompt)} pageSlug={slug} />
         </section>
 
         {/* ═══ 字母表专属：A-Z 字母展示 ═══ */}
@@ -134,10 +146,13 @@ export function KeywordPage({ slug }: { slug: string }) {
             {page.related.map((item) => {
               const href = item.slug === "home" ? "/" : pages[item.slug]?.pathname;
               return (
-                <Link key={item.label} href={href} className="related-link-card">
-                  <strong>{item.label}</strong>
-                  <p>{item.description}</p>
-                </Link>
+                <RelatedLinkCard
+                  key={item.label}
+                  href={href}
+                  label={item.label}
+                  description={item.description}
+                  pageSlug={slug}
+                />
               );
             })}
           </div>

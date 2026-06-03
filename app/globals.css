@@ -640,6 +640,13 @@ img { max-width: 100%; display: block; }
   color: var(--accent);
 }
 
+.alphabet-example-word {
+  font-size: .7rem;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  font-style: italic;
+}
+
 /* ── Alphabet Example Words ── */
 .alphabet-example-grid {
   display: grid;
@@ -736,10 +743,22 @@ img { max-width: 100%; display: block; }
 
   .hero-title { font-size: 1.8rem; }
 
+  .gen-textarea { min-height: 80px; font-size: 1rem; padding: 12px; }
+  .gen-chips { gap: 6px; }
+  .gen-chip { font-size: .78rem; padding: 5px 10px; }
+
+  .results-grid { gap: 10px; }
+  .result-card { padding: 12px; }
+  .result-preview { font-size: 1.3rem; }
+
   .landing-card,
   .info-card { padding: 18px; }
 
   .faq-item { padding: 16px 20px; }
 
   .related-grid { grid-template-columns: 1fr; }
+
+  .alphabet-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+  .alphabet-card { padding: 8px; }
+  .alphabet-styled-btn { font-size: 1.2rem; }
 }

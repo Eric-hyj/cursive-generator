@@ -110,12 +110,22 @@ export function generateCursiveStyles(input: string): GeneratedStyle[] {
   ];
 }
 
+const exampleWords: Record<string, string> = {
+  A: "Angel", B: "Bloom", C: "Crystal", D: "Dream", E: "Elegant",
+  F: "Flower", G: "Golden", H: "Heart", I: "Ivory", J: "Jasmine",
+  K: "Knight", L: "Lovely", M: "Miracle", N: "Noble", O: "Opal",
+  P: "Pearl", Q: "Queen", R: "Rose", S: "Silver", T: "Tulip",
+  U: "Unity", V: "Velvet", W: "Willow", X: "Xenon", Y: "Yonder", Z: "Zephyr",
+};
+
 export function buildAlphabetRows() {
   return basicUpper.split("").map((upper, index) => {
     const lower = basicLower[index];
+    const word = exampleWords[upper] || upper;
     return {
       upper,
       lower,
+      exampleWord: word,
       classicUpper: transformText(upper, "classic"),
       classicLower: transformText(lower, "classic"),
       formalUpper: transformText(upper, "formal"),
@@ -124,6 +134,7 @@ export function buildAlphabetRows() {
       airyLower: transformText(lower, "airy"),
       studioUpper: transformText(upper, "studio"),
       studioLower: transformText(lower, "studio"),
+      classicWord: transformText(word, "classic"),
     };
   });
 }
