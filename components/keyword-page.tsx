@@ -4,7 +4,7 @@ import { AdSlot } from "@/components/ad-slot";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CursiveWorkbench } from "@/components/cursive-workbench";
 import { AlphabetGrid } from "@/components/alphabet-grid";
-import { buildFaqSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
+import { buildFaqSchema, buildBreadcrumbSchema, buildWebApplicationSchema } from "@/lib/structured-data";
 import { RelatedLinkCard } from "@/components/related-link-card";
 
 const categoryLabels: Record<string, string> = {
@@ -14,7 +14,7 @@ const categoryLabels: Record<string, string> = {
 
 function buildBreadcrumbs(page: PageContent) {
   if (page.pathname === "/") {
-    return [{ label: "Home" }, { label: page.h1 }];
+    return [{ label: "Home" }];
   }
   return [
     { label: "Home", href: "/" },
@@ -39,6 +39,10 @@ export function KeywordPage({ slug }: { slug: string }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page.faqs)) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildWebApplicationSchema(page)) }}
         />
 
         <CursiveWorkbench page={page} slug={slug} />
@@ -131,9 +135,11 @@ export function SiteHeader() {
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/cursive-text-generator", label: "Cursive Text" },
+    { href: "/text-to-cursive-generator", label: "Text to Cursive" },
     { href: "/cursive-font-generator", label: "Cursive Fonts" },
     { href: "/cursive-signature-generator", label: "Signatures" },
     { href: "/cursive-name-generator", label: "Names" },
+    { href: "/cursive-alphabet-generator", label: "Alphabet" },
     { href: "/cursive-text-generator-copy-and-paste", label: "Copy & Paste" },
   ];
 
@@ -141,7 +147,7 @@ export function SiteHeader() {
     <header className="topbar">
       <div className="topbar-inner">
         <div className="brand">
-          <Link href="/" className="brand-mark">Inkspell</Link>
+          <Link href="/" className="brand-mark">CursiveGenerator.live</Link>
           <div className="brand-copy">cursive tools for names, text & signatures</div>
         </div>
         <nav className="nav" aria-label="Primary navigation">

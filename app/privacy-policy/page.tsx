@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { getSiteUrl } from "@/lib/site-config";
+import { buildStaticMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Inkspell - Cursive Text Generator",
-  description: "Privacy policy for Inkspell. Learn how we use cookies, analytics, and advertising on our free cursive text generator tools.",
-  alternates: { canonical: `${getSiteUrl()}/privacy-policy` }
-};
+export const metadata: Metadata = buildStaticMetadata(
+  "Privacy Policy | CursiveGenerator.live",
+  "Privacy policy for CursiveGenerator.live. Learn how we use cookies, analytics, and advertising on our free cursive generator tools.",
+  "/privacy-policy"
+);
 
 export default function PrivacyPolicyPage() {
   return (
@@ -17,14 +17,14 @@ export default function PrivacyPolicyPage() {
 
           <h2>1. Overview</h2>
           <p>
-            This privacy policy explains how Inkspell (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) handles information
+            This privacy policy explains how CursiveGenerator.live (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) handles information
             when you visit cursivegenerator.live and use our free cursive text generator tools. We are committed
             to transparency and keeping your data safe.
           </p>
 
           <h2>2. Information We Collect</h2>
           <p>
-            Inkspell does <strong>not</strong> require user accounts, collect personal information such as names
+            CursiveGenerator.live does <strong>not</strong> require user accounts, collect personal information such as names
             or email addresses, or store the text you generate. All cursive text conversion happens directly in
             your browser — the text you type is never sent to or stored on our servers.
           </p>

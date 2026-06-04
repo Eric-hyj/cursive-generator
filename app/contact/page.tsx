@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { getSiteUrl } from "@/lib/site-config";
+import { buildStaticMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Contact Inkspell - Cursive Text Generator Support",
-  description: "Contact the Inkspell team. Reach out with questions, feedback, bug reports, or advertising inquiries about our free cursive text tools.",
-  alternates: { canonical: `${getSiteUrl()}/contact` }
-};
+export const metadata: Metadata = buildStaticMetadata(
+  "Contact CursiveGenerator.live - Cursive Tool Support",
+  "Contact CursiveGenerator.live with questions, feedback, bug reports, or advertising inquiries about our free cursive text tools.",
+  "/contact"
+);
 
 export default function ContactPage() {
   return (
@@ -32,7 +32,7 @@ export default function ContactPage() {
             <li><strong>Bug reports</strong> — If something is not working as expected, let us know what browser and device you are using.</li>
             <li><strong>Feature requests</strong> — Have an idea for a new cursive style or a new tool? We are always listening.</li>
             <li><strong>Platform questions</strong> — Need help using cursive text on Instagram, TikTok, Discord, or another platform?</li>
-            <li><strong>Advertising</strong> — Interested in advertising on Inkspell? Reach out for rate and placement details.</li>
+            <li><strong>Advertising</strong> — Interested in advertising on CursiveGenerator.live? Reach out for rate and placement details.</li>
             <li><strong>Privacy concerns</strong> — Questions about how we handle data? See our Privacy Policy or contact us directly.</li>
           </ul>
         </article>

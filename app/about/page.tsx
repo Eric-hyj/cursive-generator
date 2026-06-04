@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { getSiteUrl } from "@/lib/site-config";
+import { buildStaticMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Inkspell - Free Cursive Text Generator Tools",
-  description: "Learn about Inkspell, our free online cursive generator tools. Create elegant cursive text for social media, names, signatures, and creative projects.",
-  alternates: { canonical: `${getSiteUrl()}/about` }
-};
+export const metadata: Metadata = buildStaticMetadata(
+  "About CursiveGenerator.live - Free Cursive Text Tools",
+  "Learn about CursiveGenerator.live, our free online cursive generator tools for social media, names, signatures, and creative projects.",
+  "/about"
+);
 
 export default function AboutPage() {
   return (
     <main className="page">
       <div className="page-inner">
         <article className="prose" style={{ maxWidth: "720px" }}>
-          <h1>About Inkspell</h1>
+          <h1>About CursiveGenerator.live</h1>
 
           <h2>What We Do</h2>
           <p>
-            Inkspell is a collection of free online cursive text tools. We convert plain text into elegant,
+            CursiveGenerator.live is a collection of free online cursive text tools. We convert plain text into elegant,
             flowing cursive writing that you can copy and paste anywhere — social media bios, profile names,
             email signatures, creative projects, and more. Our tools work instantly without downloads,
             sign-ups, or payments.
@@ -42,7 +42,7 @@ export default function AboutPage() {
 
           <h2>Why Free?</h2>
           <p>
-            We believe simple, useful tools should be free. Inkspell is supported by advertising, which keeps
+            We believe simple, useful tools should be free. CursiveGenerator.live is supported by advertising, which keeps
             the core text generation tools free for everyone. We do not require accounts, store your text, or
             charge for usage.
           </p>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">CursiveGenerator.live preview image</title>
+  <desc id="desc">A dark luxury preview card for the free cursive generator tool.</desc>
+  <defs>
+    <radialGradient id="g1" cx="88%" cy="8%" r="62%">
+      <stop offset="0%" stop-color="#b78c46" stop-opacity=".42"/>
+      <stop offset="55%" stop-color="#2c2823" stop-opacity=".8"/>
+      <stop offset="100%" stop-color="#15120f"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0%" stop-color="#b78c46"/>
+      <stop offset="50%" stop-color="#f7efe3" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="#b78c46" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000000" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#15120f"/>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <circle cx="100" cy="76" r="220" fill="#574127" opacity=".22"/>
+  <rect x="86" y="78" width="1032" height="474" rx="34" fill="#24211d" opacity=".84" stroke="#f7efe3" stroke-opacity=".16" filter="url(#shadow)"/>
+  <path d="M122 126h38" stroke="#b78c46" stroke-width="2"/>
+  <text x="178" y="133" fill="#c9beb0" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="8">FREE ONLINE TOOL</text>
+  <text x="122" y="246" fill="#f7efe3" font-family="Georgia, serif" font-size="86" font-weight="700" letter-spacing="-3">Cursive Generator</text>
+  <text x="122" y="337" fill="#fff6e8" font-family="Georgia, serif" font-size="68" font-style="italic">Write Beautifully</text>
+  <rect x="122" y="380" width="480" height="1.5" fill="url(#line)"/>
+  <text x="122" y="438" fill="#c9beb0" font-family="Arial, sans-serif" font-size="28">Convert plain text into elegant cursive styles.</text>
+  <text x="122" y="482" fill="#8f867a" font-family="Arial, sans-serif" font-size="24">Type, preview, copy, and paste anywhere.</text>
+  <g transform="translate(772 164)">
+    <rect width="256" height="256" rx="28" fill="#15120f" opacity=".54" stroke="#b78c46" stroke-opacity=".45"/>
+    <text x="128" y="146" text-anchor="middle" fill="#f7efe3" font-family="Georgia, serif" font-size="104" font-style="italic">Aa</text>
+    <text x="128" y="196" text-anchor="middle" fill="#b78c46" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="5">COPY READY</text>
+  </g>
+  <text x="122" y="535" fill="#b78c46" font-family="Arial, sans-serif" font-size="24" font-weight="700">cursivegenerator.live</text>
+</svg>

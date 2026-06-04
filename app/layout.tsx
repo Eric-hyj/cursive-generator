@@ -3,6 +3,7 @@ import { Cormorant_Garamond, IBM_Plex_Sans, Sacramento } from "next/font/google"
 import Link from "next/link";
 import { SiteHeader } from "@/components/keyword-page";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { pages } from "@/content/pages";
 import "./globals.css";
 
 const displayFont = Cormorant_Garamond({
@@ -36,6 +37,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <p style={{ marginBottom: ".5rem" }}>
                 Free cursive tools for names, signatures, social bios, and copy-ready text styles.
               </p>
+              <nav className="footer-tool-links" aria-label="Cursive tool navigation">
+                {Object.values(pages).map((page) => (
+                  <Link key={page.slug} href={page.pathname}>
+                    {page.h1}
+                  </Link>
+                ))}
+              </nav>
               <nav className="footer-links" aria-label="Footer navigation">
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>

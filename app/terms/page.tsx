@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { getSiteUrl } from "@/lib/site-config";
+import { buildStaticMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Terms of Use | Inkspell - Cursive Text Generator",
-  description: "Terms of use for Inkspell cursive text tools. Understand usage conditions, intellectual property, and limitations for our free online tools.",
-  alternates: { canonical: `${getSiteUrl()}/terms` }
-};
+export const metadata: Metadata = buildStaticMetadata(
+  "Terms of Use | CursiveGenerator.live",
+  "Terms of use for CursiveGenerator.live cursive text tools, including usage conditions, ownership, and limitations for our free online tools.",
+  "/terms"
+);
 
 export default function TermsPage() {
   return (
@@ -17,14 +17,14 @@ export default function TermsPage() {
 
           <h2>1. Acceptance of Terms</h2>
           <p>
-            By accessing and using Inkspell (cursivegenerator.live), you accept these Terms of Use. If you do
+            By accessing and using CursiveGenerator.live, you accept these Terms of Use. If you do
             not agree with any part of these terms, please do not use our site. We may update these terms from
             time to time, and your continued use of the site constitutes acceptance of any changes.
           </p>
 
           <h2>2. Using Our Tools</h2>
           <p>
-            Inkspell provides free online cursive text generation tools. You may use the generated cursive text
+            CursiveGenerator.live provides free online cursive text generation tools. You may use the generated cursive text
             for any personal or commercial purpose without restriction or attribution. Our tools are provided
             &quot;as is&quot; without warranties of any kind, express or implied. We do not guarantee uninterrupted
             availability, but we strive to keep the site accessible and functioning properly.
@@ -32,7 +32,7 @@ export default function TermsPage() {
 
           <h2>3. Acceptable Use</h2>
           <p>
-            You agree to use Inkspell responsibly. Prohibited activities include:
+            You agree to use CursiveGenerator.live responsibly. Prohibited activities include:
           </p>
           <ul>
             <li>Automated scraping, crawling, or excessive automated requests that degrade service for others</li>
@@ -43,7 +43,7 @@ export default function TermsPage() {
 
           <h2>4. Intellectual Property</h2>
           <p>
-            The Inkspell name, logo, website design, and original content are our intellectual property.
+            The CursiveGenerator.live name, logo, website design, and original content are our intellectual property.
             The cursive text you generate using our tools <strong>belongs to you</strong> — we claim no
             ownership over any output you create. The underlying Unicode characters used in our conversion
             process are part of the public Unicode Standard.
@@ -51,7 +51,7 @@ export default function TermsPage() {
 
           <h2>5. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by law, Inkspell and its operators shall not be liable for any
+            To the fullest extent permitted by law, CursiveGenerator.live and its operators shall not be liable for any
             direct, indirect, incidental, consequential, or special damages arising from your use of or
             inability to use the site or its tools. This includes but is not limited to damages for loss of
             data, business interruption, or device issues.
@@ -60,7 +60,7 @@ export default function TermsPage() {
           <h2>6. External Links</h2>
           <p>
             Our site contains links to third-party websites and services. We are not responsible for the content,
-            policies, or practices of any external sites you visit through links on Inkspell.
+            policies, or practices of any external sites you visit through links on CursiveGenerator.live.
           </p>
 
           <h2>7. Contact</h2>

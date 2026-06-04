@@ -42,12 +42,12 @@ export const pages: Record<string, PageContent> = {
     pathname: "/",
     category: "home",
     eyebrow: "Free Online Tool",
-    title: "Cursive Generator - Convert Text to Cursive Instantly | Inkspell",
-    description: "Free cursive generator to turn plain text into beautiful cursive writing instantly. Copy and paste cursive text for names, signatures, bios, and social media. Multiple styles, no downloads.",
+    title: "Cursive Generator - Convert Text to Cursive",
+    description: "Free cursive generator to turn plain text into beautiful cursive writing. Copy and paste cursive text for names, signatures, bios, and social media.",
     h1: "Cursive Generator",
     heroTitle: "Cursive Generator",
     heroDescription: "Turn plain text into stylish cursive instantly — free, no downloads, works everywhere. Try names, signatures, bios, and more.",
-    intro: "Welcome to Inkspell, your free online cursive generator. Type any text and watch it transform into elegant cursive writing across multiple styles in real time. Whether you need a flowing signature for your email footer, a stylish name for your Instagram bio, or beautiful lettering for a creative project, this tool delivers instant results you can copy and paste anywhere. No font downloads, no sign-ups, no watermarks — just type, preview, and copy.",
+    intro: "Welcome to CursiveGenerator.live, your free online cursive generator. Type any text and watch it transform into elegant cursive writing across multiple styles in real time. Whether you need a flowing signature for your email footer, a stylish name for your Instagram bio, or beautiful lettering for a creative project, this tool delivers instant results you can copy and paste anywhere. No font downloads, no sign-ups, no watermarks — just type, preview, and copy.",
     samplePrompt: "Write Beautifully",
     examples: [
       "Olivia", "James", "Dream big", "Stay golden",
@@ -86,7 +86,7 @@ export const pages: Record<string, PageContent> = {
       },
       {
         question: "Do I need to create an account or pay?",
-        answer: "No. Inkspell is completely free and does not require any account, sign-up, or payment. You can generate and copy cursive text as many times as you want with no limits."
+        answer: "No. CursiveGenerator.live is completely free and does not require any account, sign-up, or payment. You can generate and copy cursive text as many times as you want with no limits."
       },
       {
         question: "How is this different from downloading a cursive font?",
@@ -135,8 +135,8 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-text-generator",
     category: "text",
     eyebrow: "Text Tool",
-    title: "Cursive Text Generator - Convert Text to Elegant Cursive | Inkspell",
-    description: "Free cursive text generator to turn any plain text into flowing cursive writing. Copy and paste cursive text for Instagram bios, captions, messages, and social media posts.",
+    title: "Cursive Text Generator - Copy and Paste Cursive Text",
+    description: "Free cursive text generator for turning plain text into flowing cursive. Copy and paste cursive text for bios, captions, messages, and posts.",
     h1: "Cursive Text Generator",
     heroTitle: "Cursive Text Generator",
     heroDescription: "Transform ordinary text into flowing cursive instantly. Perfect for bios, captions, messages, and any text that needs an elegant touch.",
@@ -208,7 +208,7 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-font-generator",
     category: "font",
     eyebrow: "Font & Style Tool",
-    title: "Cursive Font Generator - Explore Elegant Cursive Font Styles | Inkspell",
+    title: "Cursive Font Generator - Cursive Font Styles",
     description: "Browse and compare cursive font styles online. Generate text in multiple cursive directions for logos, branding, wedding designs, and creative projects.",
     h1: "Cursive Font Generator",
     heroTitle: "Cursive Font Generator",
@@ -282,7 +282,7 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-signature-generator",
     category: "signature",
     eyebrow: "Signature Tool",
-    title: "Cursive Signature Generator - Handwritten Signature Styles | Inkspell",
+    title: "Cursive Signature Generator - Handwritten Styles",
     description: "Create elegant cursive signature styles online. Enter any name and get beautiful handwritten signature ideas for email, documents, branding, and personal use.",
     h1: "Cursive Signature Generator",
     heroTitle: "Cursive Signature Generator",
@@ -344,7 +344,7 @@ export const pages: Record<string, PageContent> = {
       {
         slug: "name-in-cursive-generator",
         label: "Name in Cursive",
-        description: "Another popular way to write any name in flowing cursive — same engine, different phrasing."
+        description: "A focused page for people searching the exact phrase 'name in cursive' and quick name previews."
       }
     ]
   },
@@ -357,7 +357,7 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-name-generator",
     category: "name",
     eyebrow: "Name Tool",
-    title: "Cursive Name Generator - Style Your Name in Cursive | Inkspell",
+    title: "Cursive Name Generator - Style Your Name",
     description: "Write any name in beautiful cursive online. Generate stylish cursive names for Instagram, TikTok, gaming profiles, usernames, and personal branding.",
     h1: "Cursive Name Generator",
     heroTitle: "Cursive Name Generator",
@@ -407,7 +407,7 @@ export const pages: Record<string, PageContent> = {
       {
         slug: "name-in-cursive-generator",
         label: "Name in Cursive",
-        description: "Another way to write any name in cursive — same four styles, optimized for the 'name in cursive' search."
+        description: "A quick lookup page for seeing exactly how a first name, last name, or full name looks in cursive."
       },
       {
         slug: "cursive-signature-generator",
@@ -430,7 +430,7 @@ export const pages: Record<string, PageContent> = {
     pathname: "/text-to-cursive-generator",
     category: "text",
     eyebrow: "Conversion Tool",
-    title: "Text to Cursive Generator - Convert Plain Text to Cursive | Inkspell",
+    title: "Text to Cursive Generator - Convert Plain Text",
     description: "Convert plain text to cursive online in seconds. Transform ordinary writing into flowing cursive text — copy and paste anywhere from Instagram to email.",
     h1: "Text to Cursive Generator",
     heroTitle: "Text to Cursive Generator",
@@ -455,7 +455,7 @@ export const pages: Record<string, PageContent> = {
       },
       {
         title: "How this page is different from our general text generator",
-        body: "This page is optimized for the 'convert' search intent — you are thinking in before-and-after terms. It is structured around that transformation mindset with examples that mirror the way people actually search for this. Our main Cursive Text Generator is broader and covers more use cases. Our Copy and Paste page prioritizes speed above all else. All three share the same engine, but each is tuned for a different mental model of how you approach cursive text."
+        body: "This page is optimized for the 'convert' search intent — you are thinking in before-and-after terms. It is structured around that transformation mindset with examples that mirror the way people actually search for this. Our main Cursive Text Generator is broader and covers everyday messages, captions, and creative phrases. Our Copy and Paste page prioritizes speed above all else. This page stays focused on the transformation workflow: plain text in, cursive text out, compare, copy, and move on."
       },
       {
         title: "When to choose a text-to-cursive tool",
@@ -473,7 +473,7 @@ export const pages: Record<string, PageContent> = {
       },
       {
         question: "How is this different from the main cursive text generator?",
-        answer: "Both tools use the same Unicode conversion engine and produce the same four cursive styles. This page is tuned for people who search with 'convert' or 'text to cursive' — the examples, guidance, and page structure are designed around that before-and-after mental model rather than general cursive text generation."
+        answer: "Use this page when your goal is specifically to convert existing plain text into cursive and compare the before-and-after result. Use the main Cursive Text Generator when you want broader examples for captions, greetings, bios, and creative writing. The output style family is intentionally consistent across the site so copied text behaves predictably, but each page is organized around a different search intent."
       }
     ],
     related: [
@@ -503,8 +503,8 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-text-generator-copy-and-paste",
     category: "copy",
     eyebrow: "Quick Copy Tool",
-    title: "Cursive Text Generator Copy and Paste - Instant Cursive Text | Inkspell",
-    description: "Generate and copy cursive text instantly. Paste stylish cursive writing directly into Instagram, TikTok, Discord, WhatsApp, and any social platform in one click.",
+    title: "Cursive Text Copy and Paste Generator",
+    description: "Generate and copy cursive text instantly. Paste stylish cursive writing into Instagram, TikTok, Discord, WhatsApp, and other platforms.",
     h1: "Cursive Text Generator Copy and Paste",
     heroTitle: "Cursive Text Generator Copy and Paste",
     heroDescription: "Generate cursive text and copy it in one click. Built for speed — paste directly into Instagram, TikTok, Discord, WhatsApp, and anywhere else.",
@@ -576,7 +576,7 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-handwriting-name-generator",
     category: "name",
     eyebrow: "Handwriting Tool",
-    title: "Cursive Handwriting Name Generator - Handwritten Name Styles | Inkspell",
+    title: "Cursive Handwriting Name Generator",
     description: "Turn names into beautiful handwritten cursive text. Create soft, personal handwriting styles for invitations, greeting cards, gift tags, and creative projects.",
     h1: "Cursive Handwriting Name Generator",
     heroTitle: "Cursive Handwriting Name Generator",
@@ -636,7 +636,7 @@ export const pages: Record<string, PageContent> = {
       {
         slug: "name-in-cursive-generator",
         label: "Name in Cursive",
-        description: "Another way to write any name in cursive — same engine, different search phrasing."
+        description: "A quick name lookup page for people who want to see a name written in cursive."
       }
     ]
   },
@@ -649,8 +649,8 @@ export const pages: Record<string, PageContent> = {
     pathname: "/cursive-alphabet-generator",
     category: "alphabet",
     eyebrow: "Reference Tool",
-    title: "Cursive Alphabet Generator - Cursive Letters A to Z | Inkspell",
-    description: "Browse the complete cursive alphabet from A to Z. Copy uppercase and lowercase cursive letters in multiple styles. Reference for learning, design, monograms, and creative projects.",
+    title: "Cursive Alphabet Generator - Letters A to Z",
+    description: "Browse the cursive alphabet from A to Z. Copy uppercase and lowercase cursive letters for learning, design, monograms, and creative projects.",
     h1: "Cursive Alphabet Generator",
     heroTitle: "Cursive Alphabet Generator",
     heroDescription: "Browse every cursive letter from A to Z in uppercase and lowercase. Compare four styles, copy individual letters, and explore example words.",
@@ -717,7 +717,7 @@ export const pages: Record<string, PageContent> = {
     pathname: "/name-in-cursive-generator",
     category: "name",
     eyebrow: "Name Lookup Tool",
-    title: "Name in Cursive Generator - Write Any Name in Cursive | Inkspell",
+    title: "Name in Cursive Generator - Write Any Name",
     description: "Write any name in cursive instantly. See how first names, last names, and full names look in flowing cursive text. Copy and use anywhere.",
     h1: "Name in Cursive Generator",
     heroTitle: "Name in Cursive Generator",
@@ -742,7 +742,7 @@ export const pages: Record<string, PageContent> = {
       },
       {
         title: "How this page fits into our name tool collection",
-        body: "This page is tuned for the exact phrase people search: 'name in cursive.' It shares the same Unicode conversion engine as our Cursive Name Generator (broader, more identity-focused) and Handwriting Name Generator (softer, invitation-focused), but the examples and guidance here are optimized for quick name lookups. If you want to browse popular names in cursive, start with the Cursive Name Generator. If you are working on wedding or event materials, the Handwriting Name Generator is more targeted."
+        body: "This page is tuned for the exact phrase people search: 'name in cursive.' The examples and guidance are optimized for quick name lookups: type a name, compare the result, copy the version that feels right. If you want broader identity ideas for usernames and profile names, start with the Cursive Name Generator. If you are working on wedding or event materials, the Handwriting Name Generator is more targeted."
       },
       {
         title: "Popular uses for cursive name output",
@@ -752,7 +752,7 @@ export const pages: Record<string, PageContent> = {
     faqs: [
       {
         question: "Is this different from the Cursive Name Generator?",
-        answer: "Both pages use the same engine and produce identical output for the same name. The difference is in search intent: this page is optimized for people who type 'name in cursive' (a specific phrase), while the Cursive Name Generator targets broader name-related searches. Pick whichever page feels more natural — the results will be equally beautiful."
+        answer: "This page is best for quick searches like 'my name in cursive' or 'write this name in cursive.' The Cursive Name Generator is broader and better for usernames, profile names, nicknames, and personal branding ideas. Choose this page for a direct name lookup; choose the broader page when you want more identity-focused guidance."
       },
       {
         question: "Can I write 'My name in cursive' and get a result?",
