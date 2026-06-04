@@ -351,6 +351,12 @@ button, textarea { font: inherit; }
   box-shadow: var(--shadow-soft);
 }
 
+.results-section {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(183, 140, 70, .12), transparent 34%),
+    rgba(17, 16, 14, .68);
+}
+
 .results-header,
 .faq-header,
 .related-header {
@@ -361,6 +367,16 @@ button, textarea { font: inherit; }
   padding: 20px 26px;
   border-bottom: 1px solid var(--line);
   background: rgba(17, 16, 14, .5);
+}
+
+.results-header {
+  padding: 24px 28px 18px;
+  background: transparent;
+}
+
+.results-hint {
+  color: var(--ink-muted);
+  font-size: .85rem;
 }
 
 .results-header h2,
@@ -385,22 +401,23 @@ button, textarea { font: inherit; }
 
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 14px;
-  padding: 22px 26px 26px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  padding: 22px 28px 28px;
 }
 
 .result-card {
   position: relative;
   display: flex;
-  min-height: 190px;
+  min-height: 174px;
   flex-direction: column;
-  gap: 13px;
+  gap: 14px;
   overflow: hidden;
-  padding: 20px;
+  padding: 22px 20px 20px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: var(--panel-soft);
+  background:
+    linear-gradient(180deg, rgba(247, 239, 227, .065), rgba(247, 239, 227, .035));
   transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
 }
 
@@ -408,8 +425,8 @@ button, textarea { font: inherit; }
   content: "";
   position: absolute;
   inset: 0 0 auto;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), rgba(247,239,227,.18), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(247,239,227,.2), transparent);
 }
 
 .result-card:hover {
@@ -438,7 +455,7 @@ button, textarea { font: inherit; }
 
 .result-style-name,
 .result-char-count {
-  color: var(--ink-muted);
+  color: rgba(247, 239, 227, .5);
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: .12em;
@@ -449,18 +466,18 @@ button, textarea { font: inherit; }
   flex: 1;
   min-height: 54px;
   color: var(--ink);
-  font-size: clamp(1.48rem, 2.7vw, 2.08rem);
+  font-size: clamp(1.62rem, 2.9vw, 2.28rem);
   line-height: 1.42;
   word-break: break-word;
 }
 
 .result-copy-btn {
   align-self: flex-start;
-  padding: 9px 17px;
+  padding: 9px 18px;
   border: 0;
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--bg);
+  background: #fff6e8;
+  color: #171412;
   cursor: pointer;
   font-size: .84rem;
   font-weight: 700;
@@ -471,6 +488,10 @@ button, textarea { font: inherit; }
   background: var(--gold);
   color: var(--bg);
   transform: translateY(-1px);
+}
+
+.results-section > .results-grid .result-copy-btn {
+  margin-top: auto;
 }
 
 .result-copy-btn.copied {

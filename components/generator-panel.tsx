@@ -9,17 +9,35 @@ type GeneratorPanelProps = {
   examples: string[];
   showAsResults?: boolean;
   pageSlug?: string;
+  value?: string;
+  onValueChange?: (value: string) => void;
 };
 
-export function GeneratorPanel({ initialPrompt, examples, showAsResults, pageSlug = "" }: GeneratorPanelProps) {
-  const [value, setValue] = useState(initialPrompt);
+export function GeneratorPanel({
+  initialPrompt,
+  examples,
+  showAsResults,
+  pageSlug = "",
+  value: controlledValue,
+  onValueChange,
+}: GeneratorPanelProps) {
+  const [internalValue, setInternalValue] = useState(initialPrompt);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const inputTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const value = controlledValue ?? internalValue;
   const results = useMemo(() => generateCursiveStyles(value), [value]);
 
+  function updateValue(text: string) {
+    if (onValueChange) {
+      onValueChange(text);
+      return;
+    }
+    setInternalValue(text);
+  }
+
   function handleInput(text: string) {
-    setValue(text);
+    updateValue(text);
     // Debounce input tracking to avoid flooding GA
     if (inputTimer.current) clearTimeout(inputTimer.current);
     inputTimer.current = setTimeout(() => {
@@ -39,7 +57,7 @@ export function GeneratorPanel({ initialPrompt, examples, showAsResults, pageSlu
   }
 
   function handleExampleClick(example: string) {
-    setValue(example);
+    updateValue(example);
     trackExampleClick(pageSlug, example);
   }
 
@@ -94,7 +112,7 @@ export function GeneratorPanel({ initialPrompt, examples, showAsResults, pageSlu
       </div>
 
       <div className="gen-actions-row">
-        <button type="button" className="gen-clear" onClick={() => setValue(initialPrompt)}>
+        <button type="button" className="gen-clear" onClick={() => updateValue(initialPrompt)}>
           Reset
         </button>
         <span style={{fontSize:".8rem",color:"var(--ink-muted)"}}>

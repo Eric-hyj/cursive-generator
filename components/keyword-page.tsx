@@ -2,10 +2,8 @@ import Link from "next/link";
 import { pages, type PageContent } from "@/content/pages";
 import { AdSlot } from "@/components/ad-slot";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { GeneratorPanel } from "@/components/generator-panel";
-import { ResultCards } from "@/components/result-cards";
+import { CursiveWorkbench } from "@/components/cursive-workbench";
 import { AlphabetGrid } from "@/components/alphabet-grid";
-import { generateCursiveStyles } from "@/lib/generator";
 import { buildFaqSchema, buildBreadcrumbSchema } from "@/lib/structured-data";
 import { RelatedLinkCard } from "@/components/related-link-card";
 
@@ -27,9 +25,6 @@ function buildBreadcrumbs(page: PageContent) {
 
 export function KeywordPage({ slug }: { slug: string }) {
   const page = pages[slug];
-  const heroParts = page.heroTitle.startsWith("Cursive ")
-    ? { lead: "Cursive", tail: page.heroTitle.replace(/^Cursive\s+/, "") }
-    : null;
 
   return (
     <main className="page">
@@ -46,53 +41,7 @@ export function KeywordPage({ slug }: { slug: string }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(page.faqs)) }}
         />
 
-        {/* ═══ V2.0 三合一核心区 ═══ */}
-        <section className="hero-tool">
-          <div className="hero-tool-copy">
-            <div className="hero-eyebrow">{page.eyebrow}</div>
-            <h1 className="hero-title">
-              {heroParts ? (
-                <><em>{heroParts.lead}</em> {heroParts.tail}</>
-              ) : (
-                page.heroTitle
-              )}
-            </h1>
-            <p className="hero-desc">{page.heroDescription}</p>
-            <div className="hero-tags">
-              <span className="hero-tag">Instant preview</span>
-              <span className="hero-tag">One-click copy</span>
-              <span className="hero-tag">Multiple styles</span>
-            </div>
-
-            {slug === "home" && (
-              <div className="hero-quick-links">
-                <span className="hero-quick-label">Popular tools</span>
-                <div className="hero-quick-grid">
-                  <Link href="/cursive-text-generator" className="hero-quick-link">Cursive Text</Link>
-                  <Link href="/cursive-font-generator" className="hero-quick-link">Cursive Fonts</Link>
-                  <Link href="/cursive-signature-generator" className="hero-quick-link">Signature Generator</Link>
-                  <Link href="/cursive-name-generator" className="hero-quick-link">Name Generator</Link>
-                  <Link href="/cursive-text-generator-copy-and-paste" className="hero-quick-link">Copy &amp; Paste</Link>
-                  <Link href="/cursive-alphabet-generator" className="hero-quick-link">Alphabet A-Z</Link>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="hero-tool-panel">
-            <GeneratorPanel initialPrompt={page.samplePrompt} examples={page.examples} pageSlug={slug} />
-          </div>
-        </section>
-
-        {/* ═══ 结果展示区 ═══ */}
-        <section className="results-section">
-          <div className="results-header">
-            <h2>Cursive Styles for &ldquo;{page.samplePrompt}&rdquo;</h2>
-            <span style={{color:"var(--ink-muted)",fontSize:".85rem"}}>
-              Click any style to copy
-            </span>
-          </div>
-          <ResultCards items={generateCursiveStyles(page.samplePrompt)} pageSlug={slug} />
-        </section>
+        <CursiveWorkbench page={page} slug={slug} />
 
         {/* ═══ 字母表专属：A-Z 字母展示 ═══ */}
         {slug === "cursive-alphabet-generator" && <AlphabetGrid />}
