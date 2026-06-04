@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <footer className="footer">
             <div className="footer-inner">
               <p style={{ marginBottom: ".5rem" }}>
-                Built as a keyword-cluster-ready tool site: one keyword, one page, with shared logic and HTML-first landing copy.
+                Free cursive tools for names, signatures, social bios, and copy-ready text styles.
               </p>
               <nav className="footer-links" aria-label="Footer navigation">
                 <Link href="/about">About</Link>
