@@ -138,9 +138,13 @@ export function SiteHeader() {
     { href: "/text-to-cursive-generator", label: "Text to Cursive" },
     { href: "/cursive-font-generator", label: "Cursive Fonts" },
     { href: "/cursive-signature-generator", label: "Signatures" },
-    { href: "/cursive-name-generator", label: "Names" },
     { href: "/cursive-alphabet-generator", label: "Alphabet" },
     { href: "/cursive-text-generator-copy-and-paste", label: "Copy & Paste" },
+  ];
+  const nameLinks = [
+    { href: "/cursive-name-generator", label: "Cursive Name Generator" },
+    { href: "/name-in-cursive-generator", label: "Name in Cursive Generator" },
+    { href: "/cursive-handwriting-name-generator", label: "Cursive Handwriting Name Generator" },
   ];
 
   return (
@@ -156,6 +160,18 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <div className="nav-group">
+            <Link href="/cursive-name-generator" className="nav-link nav-group-trigger">
+              Names
+            </Link>
+            <div className="nav-menu" aria-label="Name generator pages">
+              {nameLinks.map((item) => (
+                <Link key={item.href} href={item.href} className="nav-menu-link">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </nav>
       </div>
     </header>
